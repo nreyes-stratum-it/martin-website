@@ -1,0 +1,5 @@
+/**
+ * routing service
+ */
+
+export default () => ({});

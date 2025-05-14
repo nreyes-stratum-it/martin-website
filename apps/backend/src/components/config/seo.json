@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_config_seos",
+  "info": {
+    "displayName": "Seo",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "meta_title": {
+      "type": "text",
+      "required": true
+    },
+    "meta_description": {
+      "type": "text",
+      "required": true
+    },
+    "media": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.image",
+      "required": true
+    }
+  }
+}

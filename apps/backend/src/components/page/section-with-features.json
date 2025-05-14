@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_page_section_with_features",
+  "info": {
+    "displayName": "Section With Features",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.headline",
+      "required": true
+    },
+    "subline": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.subline"
+    },
+    "features": {
+      "displayName": "Features",
+      "type": "component",
+      "repeatable": true,
+      "component": "components.features",
+      "required": true
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "VARIANT-1"
+      ]
+    }
+  }
+}

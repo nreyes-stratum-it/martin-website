@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_page_section_above_the_folds",
+  "info": {
+    "displayName": "Section Above The Fold",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.headline",
+      "required": true
+    },
+    "subline": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.subline"
+    },
+    "callToAction": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.link"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "VARIANT-1"
+      ],
+      "required": true,
+      "default": "VARIANT-1"
+    },
+    "background": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.image"
+    }
+  }
+}

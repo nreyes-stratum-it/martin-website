@@ -1,0 +1,62 @@
+name: Deploy Develop
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install root dependencies
+        run: npm install
+
+      - name: Build turbo repo
+        run: npm run build
+
+      - name: List output directory
+        run: ls -la apps/frontend/out
+
+      - name: Set up AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-account-id: ${{ secrets.AWS_DEV_ACCOUNT_ID }}
+          aws-access-key-id: ${{ secrets.AWS_DEV_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_DEV_ACCESS_KEY_SECRET }}
+          aws-region: eu-central-1
+
+      - name: CDK Bootstrap
+        run: |
+          npx aws-cdk bootstrap aws://$(aws sts get-caller-identity --query Account --output text)/eu-central-1 -c stage=develop -c domainName=stratum-it.com --require-approval never
+        working-directory: apps/cdk
+
+      - name: Deploy stack with CDK
+        run: |
+          npm run deploy-develop
+        working-directory: apps/cdk
+  
+      # - name: Upload files to S3
+      #   uses: jakejarvis/s3-sync-action@v0.5.1
+      #   with:
+      #     args: --delete
+      #     source-dir: "apps/frontend/out"
+      #     destination-dir: ${{ secrets.S3_BUCKET }}
+      #   env:
+      #     aws-s3-bucket: ${{ secrets.S3_BUCKET }}
+      #     aws-access-key-id: ${{ secrets.AWS_DEV_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_DEV_ACCESS_KEY_SECRET }}
+      #     aws-region: eu-central-1
+
+      # - name: Invalidate CloudFront cache
+      #   run: |
+      #     aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"

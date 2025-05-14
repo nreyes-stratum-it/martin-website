@@ -1,0 +1,81 @@
+name: Deploy Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install root dependencies
+        run: npm install
+
+      - name: Build turbo repo
+        run: npm run build
+
+      - name: List output directory
+        run: ls -la apps/frontend/out
+
+      - name: Set up AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-account-id: ${{ secrets.AWS_PROD_ACCOUNT_ID }}
+          aws-access-key-id: ${{ secrets.AWS_PROD_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_PROD_ACCESS_KEY_SECRET }}
+          aws-region: eu-central-1
+
+      - name: Debug AWS Credentials
+        run: |
+          echo "Verifying identity with AWS STS..."
+          aws sts get-caller-identity
+          echo "AWS Account ID: ${{ secrets.AWS_PROD_ACCOUNT_ID }}"
+
+      - name: CDK Bootstrap Edge Function
+        run: |
+          npx aws-cdk bootstrap aws://${{ secrets.AWS_PROD_ACCOUNT_ID }}/us-east-1 -c stage=production -c domainName=stratum-it.com --require-approval never
+        working-directory: apps/cdk
+
+      - name: Deploy edge stack
+        run: |
+          npm run deploy-edge-production
+        working-directory: apps/cdk
+
+      - name: CDK Bootstrap Website Stack
+        run: |
+          npx aws-cdk bootstrap aws://${{ secrets.AWS_PROD_ACCOUNT_ID }}/eu-central-1 -c stage=production -c domainName=stratum-it.com --require-approval never
+        working-directory: apps/cdk
+
+      - name: Deploy website stack
+        run: |
+          npm run deploy-website-production
+
+          BUCKET_NAME=$(aws cloudformation list-exports --query "Exports[?Name=='WebsiteBucketName'].Value" --output text)
+          echo "BUCKET_NAME=${BUCKET_NAME}" >> $GITHUB_ENV
+        working-directory: apps/cdk
+
+      - name: Upload files to S3
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --delete
+        env:
+          AWS_S3_BUCKET: ${{ env.BUCKET_NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_PROD_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_PROD_ACCESS_KEY_SECRET }}
+          AWS_REGION: "eu-central-1"
+          SOURCE_DIR: "apps/frontend/out"
+          DESTINATION_DIR: s3://${{ env.BUCKET_NAME }}
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id E2BVEVNP6A4G1I --paths "/*"

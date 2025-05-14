@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_ui_paragraphs",
+  "info": {
+    "displayName": "Paragraph"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "enumeration",
+      "enum": [
+        "p",
+        "div",
+        "span"
+      ],
+      "required": true
+    },
+    "text": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

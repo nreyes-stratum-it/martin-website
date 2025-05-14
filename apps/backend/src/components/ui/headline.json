@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_ui_headlines",
+  "info": {
+    "displayName": "Headline"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext",
+      "required": true
+    },
+    "tag": {
+      "type": "enumeration",
+      "enum": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6"
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_components_features",
+  "info": {
+    "displayName": "Features"
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.headline",
+      "required": true
+    },
+    "subline": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.subline"
+    },
+    "media": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.image"
+    }
+  }
+}

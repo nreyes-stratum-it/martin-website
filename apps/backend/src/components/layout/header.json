@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_layout_headers",
+  "info": {
+    "displayName": "Header",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "displayName": "Logo",
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.logo"
+    },
+    "menu_link": {
+      "displayName": "Menu Link",
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.menu-link"
+    }
+  }
+}

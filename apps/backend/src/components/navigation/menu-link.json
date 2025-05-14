@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_navigation_menu_links",
+  "info": {
+    "displayName": "Menu Link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "displayName": "Link",
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.link",
+      "required": true
+    },
+    "submenu_link": {
+      "displayName": "SubMenu Link",
+      "type": "component",
+      "repeatable": false,
+      "component": "navigation.sub-menu-link"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_config_keywords",
+  "info": {
+    "displayName": "Keyword"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "cdk",
+  "version": "0.1.0",
+  "bin": {
+    "cdk": "bin/cdk.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk",
+    "deploy-develop": "rm -f cdk.context.json && npm run cdk deploy '*' -- -c stage=develop -c domainName=stratum-it.com --require-approval never",
+    "deploy-edge-production": "rm -f cdk.context.json && npm run cdk deploy 'EdgeFunctionStack' -- -c stage=production -c domainName=stratum-it.com --require-approval never",
+    "deploy-website-production": "rm -f cdk.context.json && npm run cdk deploy 'WebsiteStack' -- -c stage=production -c domainName=stratum-it.com --require-approval never"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.148",
+    "@types/node": "^22.7.9",
+    "aws-cdk": "^2.1006.0",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.6.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.186.0",
+    "cdk-common": "file:../../packages/cdk-common",
+    "constructs": "^10.4.2"
+  }
+}

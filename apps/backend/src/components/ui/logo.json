@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_ui_logos",
+  "info": {
+    "displayName": "Logo",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "media": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.image"
+    }
+  }
+}
