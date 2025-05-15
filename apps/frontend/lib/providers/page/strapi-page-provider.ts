@@ -21,8 +21,6 @@ export class StrapiPageProvider implements PageProvider {
                 return null;
             }
 
-            console.log(JSON.stringify(rawData, null, 2));
-
             const parsed = PagesSchema.safeParse(rawData);
 
             if (!parsed.success) {

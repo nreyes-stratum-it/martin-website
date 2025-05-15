@@ -79,9 +79,16 @@
       "type": "dynamiczone",
       "components": [
         "page.section-above-the-fold",
-        "page.section-with-features"
+        "page.section-with-features",
+        "page.section-spotlights",
+        "page.section-call-to-action"
       ],
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

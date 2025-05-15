@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_page_section_spotlights",
+  "info": {
+    "displayName": "Section Spotlights",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "spotlights": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.features",
+      "required": true
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "VARIANT-1"
+      ],
+      "required": true
+    }
+  }
+}

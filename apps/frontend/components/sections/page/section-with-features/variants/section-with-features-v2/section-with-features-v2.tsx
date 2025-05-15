@@ -1,46 +1,49 @@
 import React from 'react'
+import {SectionWithFeaturesData} from "@/lib/types/pages/sections/section-with-features/section-with-features";
+import HeadLine from "@/components/ui/headline/headline";
+import Subline from "@/components/ui/subline/subline";
+import {Image} from "@/components/ui/image/image";
 
-const SectionWithFeaturesV2 = () => {
+type SectionWithFeaturesV2Props = {
+    data: SectionWithFeaturesData
+}
+const SectionWithFeaturesV2 = ({data}: SectionWithFeaturesV2Props) => {
+
+    if (!data) {
+        return null
+    }
+    const {headline, subline, features} = data
+
     return (
         <section id="three" className="wrapper style3 special">
             <div className="inner">
                 <header className="major">
-                    <h2>Accumsan mus tortor nunc aliquet</h2>
-                    <p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br/>
-                        fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+                    <HeadLine data={headline}></HeadLine>
+                    <Subline data={subline}></Subline>
                 </header>
                 <ul className="features">
-                    <li className="icon fa-paper-plane">
-                        <h3>Arcu accumsan</h3>
-                        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-                            Aenean ligula consequat consequat.</p>
-                    </li>
-                    <li className="icon solid fa-laptop">
-                        <h3>Ac Augue Eget</h3>
-                        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-                            Aenean ligula consequat consequat.</p>
-                    </li>
-                    <li className="icon solid fa-code">
-                        <h3>Mus Scelerisque</h3>
-                        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-                            Aenean ligula consequat consequat.</p>
-                    </li>
-                    <li className="icon solid fa-headphones-alt">
-                        <h3>Mauris Imperdiet</h3>
-                        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-                            Aenean ligula consequat consequat.</p>
-                    </li>
-                    <li className="icon fa-heart">
-                        <h3>Aenean Primis</h3>
-                        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-                            Aenean ligula consequat consequat.</p>
-                    </li>
-                    <li className="icon fa-flag">
-                        <h3>Tortor Ut</h3>
-                        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo
-                            Aenean ligula consequat consequat.</p>
-                    </li>
+                    {features?.map((feature) => (
+                        <li key={feature.id} className="text-center lg:!px-10 lg:!py-10  lg:!flex lg:!justify-start lg:!items-start">
+                            {feature.media?.image && (
+                                <div className="!mb-4 flex justify-center lg:!mr-4 ">
+                                    <Image
+                                        data={{
+                                            image: feature.media.image,
+                                            alt: feature.media.alt || feature.headline?.text,
+                                        }}
+                                        className="h-full w-72 object-contain"
+                                    />
+                                </div>
+                            )}
+
+                            <div>
+                                <HeadLine data={feature.headline}/>
+                                <Subline data={feature.subline}/>
+                            </div>
+                        </li>
+                    ))}
                 </ul>
+
             </div>
         </section>
     )

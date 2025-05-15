@@ -4,14 +4,18 @@ import {ImageDataWithCustomAltAndDescription} from "@/lib/types/ui/image";
 import {getMediaUrl} from "@/lib/helpers/media/media";
 
 type ImageComponentProps = {
-    data: ImageDataWithCustomAltAndDescription;
+    data?: ImageDataWithCustomAltAndDescription | null;
     className?: string;
 };
 
 export const Image = ({data, className = ""}: ImageComponentProps) => {
+
+    if (!data) {
+        return null;
+    }
+
     const {image, alt, description} = data ?? {};
     const [hasError, setHasError] = useState(false);
-
 
 
     const url = image?.url ? getMediaUrl(image.url) : null;

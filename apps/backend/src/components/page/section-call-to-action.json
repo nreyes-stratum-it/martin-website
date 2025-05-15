@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_page_section_with_features",
+  "collectionName": "components_page_section_call_to_actions",
   "info": {
-    "displayName": "Section With Features",
+    "displayName": "Section Call To Action",
     "description": ""
   },
   "options": {},
@@ -17,19 +17,23 @@
       "repeatable": false,
       "component": "ui.subline"
     },
-    "features": {
-      "displayName": "Features",
+    "callToAction": {
       "type": "component",
       "repeatable": true,
-      "component": "components.features",
+      "component": "ui.link",
       "required": true
     },
     "variant": {
       "type": "enumeration",
       "enum": [
-        "VARIANT-1",
-        "VARIANT-2"
-      ]
+        "VARIANT-1"
+      ],
+      "required": true
+    },
+    "background": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.image"
     }
   }
 }

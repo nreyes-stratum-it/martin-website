@@ -1,5 +1,5 @@
 import React from 'react'
-import {SectionAboveTheFoldData} from "@/lib/types/pages/sections/section above the fold/section-above-the-fold";
+import {SectionAboveTheFoldData} from "@/lib/types/pages/sections/section-above-the-fold/section-above-the-fold";
 import SectionAboveTheFoldV1
     from "@/components/sections/page/section-above-the-fold/variants/section-above-the-fold-v1/section-above-the-fold-v1";
 

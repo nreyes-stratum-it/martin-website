@@ -1,20 +1,48 @@
 import React from 'react'
+import Headline from "@/components/ui/headline/headline";
+import {SectionWithFeaturesData} from "@/lib/types/pages/sections/section-with-features/section-with-features";
+import Subline from "@/components/ui/subline/subline";
+import {Image} from "@/components/ui/image/image";
 
-const SectionWithFeaturesV1 = () => {
+type SectionWithFeaturesV1Props = {
+    data: SectionWithFeaturesData
+}
+const SectionWithFeaturesV1 = ({data}: SectionWithFeaturesV1Props) => {
+    if (!data) {
+        return null
+    }
+
+    const {headline, subline, features} = data
     return (
         <section id="one" className="wrapper style1 special">
             <div className="inner">
                 <header className="major">
-                    <h2>Arcu aliquet vel lobortis ata nisl<br/>
-                        eget augue amet aliquet nisl cep donec</h2>
-                    <p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br/>
-                        fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+                    <Headline
+                        data={headline}
+                    ></Headline>
+                    <Subline
+                        data={subline}
+                    ></Subline>
+
                 </header>
                 <ul className="icons major">
-                    <li><span className="icon fa-gem major style1"><span className="label">Lorem</span></span></li>
-                    <li><span className="icon fa-heart major style2"><span className="label">Ipsum</span></span></li>
-                    <li><span className="icon solid fa-code major style3"><span className="label">Dolor</span></span>
-                    </li>
+
+
+                    {
+                        features?.map((feature, index) => (
+                            <li className={"!space-y-2"} key={index}>
+                                <Headline data={feature.headline}/>
+                                <Subline data={feature.subline}/>
+                                <Image
+                                    className={" w-48 rounded-lg"}
+                                    data={{
+                                        image: feature?.media?.image,
+                                        alt: feature?.media?.alt,
+                                    }}/>
+                            </li>
+                        ))
+                    }
+
                 </ul>
             </div>
         </section>
