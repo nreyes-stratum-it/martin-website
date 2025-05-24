@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_page_section_steppers",
+  "info": {
+    "displayName": "Section Stepper",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.headline",
+      "required": true
+    },
+    "subline": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.subline"
+    },
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.step",
+      "required": true
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "VARIANT-1"
+      ],
+      "default": "VARIANT-1",
+      "required": true
+    }
+  }
+}

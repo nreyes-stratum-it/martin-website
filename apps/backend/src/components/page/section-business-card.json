@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_page_section_business_cards",
+  "info": {
+    "displayName": "Section Business Card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "person": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::team.team"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "VARIANT-1"
+      ],
+      "required": true,
+      "default": "VARIANT-1"
+    },
+    "background": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.image"
+    }
+  }
+}

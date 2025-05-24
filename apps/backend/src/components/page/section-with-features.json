@@ -28,7 +28,8 @@
       "type": "enumeration",
       "enum": [
         "VARIANT-1",
-        "VARIANT-2"
+        "VARIANT-2",
+        "VARIANT-3"
       ]
     }
   }

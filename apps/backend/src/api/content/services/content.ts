@@ -1,0 +1,5 @@
+/**
+ * content service
+ */
+
+export default () => ({});

@@ -1,0 +1,24 @@
+{
+  "collection": "article",
+  "slug": "/blog/mein-erster-blog",
+  "locale": "de",
+  "title": "mein erster Blog",
+  "description": "fgfgfggffg",
+  "keywords": [],
+  "preventIndexing": false,
+  "publishedAt": "2025-05-13T00:42:18.024Z",
+  "updatedAt": "2025-05-13T00:42:44.271Z",
+  "localizations": {
+    "en": "/blog/a-new-blog",
+    "es": "/blog/mi-primer-blog"
+  },
+  "seo": {
+    "metaTitle": "sddsdssd",
+    "metaDescription": "sdsd",
+    "sharedImage": {
+      "url": "/uploads/laravel_react_ad7bca948b.jpg",
+      "alt": "dsdsd"
+    }
+  },
+  "author": null
+}

@@ -1,0 +1,21 @@
+{
+  "collection": "page",
+  "slug": "/bitcoin-hosting",
+  "locale": "en",
+  "title": "Bitcoin Hosting",
+  "description": "Bitcoin Hosting",
+  "keywords": [],
+  "preventIndexing": false,
+  "publishedAt": "2025-05-22T14:41:05.864Z",
+  "updatedAt": "2025-05-22T14:41:05.807Z",
+  "localizations": {},
+  "seo": {
+    "metaTitle": "Bitcoin Hosting",
+    "metaDescription": "Bitcoin Hosting",
+    "sharedImage": {
+      "url": "/uploads/photo_1483389127117_b6a2102724ae_fdca90891b.avif",
+      "alt": "Bitcoin Hosting"
+    }
+  },
+  "author": null
+}

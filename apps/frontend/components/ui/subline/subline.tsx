@@ -14,13 +14,14 @@ type SublineProps = {
 }
 
 const Subline = ({data, classNames}: SublineProps) => {
-
     if (!data) {
         return null
     }
 
     const {text, tag} = data;
+
     if (!text) return null;
+    
     return (
         <MarkdownComponent
             classNames={classNames}

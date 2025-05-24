@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_form_forms",
+  "info": {
+    "displayName": "Form",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.headline",
+      "required": false
+    },
+    "formFields": {
+      "type": "component",
+      "repeatable": true,
+      "component": "form.form-field",
+      "required": true
+    }
+  }
+}

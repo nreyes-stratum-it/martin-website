@@ -15,10 +15,7 @@ export class StrapiGlobalProvider {
                 `/global/header?locale=${encodeURIComponent(locale)}`
             );
 
-
-
             const rawData = data.header
-
 
             if (!rawData) {
                 console.error("No header data found in response");

@@ -22,6 +22,7 @@
     "packages/*"
   ],
   "dependencies": {
-    "better-sqlite3": "^11.9.1"
+    "better-sqlite3": "^11.9.1",
+    "react-hook-form": "^7.56.3"
   }
 }

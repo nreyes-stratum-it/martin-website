@@ -5,6 +5,8 @@ import {StaticParams} from "@/lib/types/routing/static-params";
 import type {MetadataRoute} from "next";
 import {Metadata} from "@/lib/types/routing/metadata";
 import {MetadataSchema} from "@/lib/schemas/routing/metadata";
+import {LocalizationData} from "@/lib/types/localizations/localization";
+import {LocalizationSchema} from "@/lib/schemas/localizations/localization";
 
 export class StrapiRoutingProvider implements RoutingProvider {
     constructor(private readonly httpClient: HttpClient) {
@@ -42,8 +44,6 @@ export class StrapiRoutingProvider implements RoutingProvider {
                 params: {slug, locale},
             });
 
-
-
             const parsed = MetadataSchema.safeParse(data);
 
             if (!parsed.success) {
@@ -54,6 +54,19 @@ export class StrapiRoutingProvider implements RoutingProvider {
             return parsed.data;
         } catch (err) {
             console.error('Error fetching metadata', err);
+            return null;
+        }
+    }
+
+
+    async getLocalizationsBySlug(slug: string, locale: string): Promise<LocalizationData[] | null> {
+        try {
+            const {data} = await this.httpClient.get('/routing/localizations', {
+                params: {slug, locale},
+            });
+            return LocalizationSchema.array().parse(data);
+        } catch (err) {
+            console.error('Error fetching localizations', err);
             return null;
         }
     }

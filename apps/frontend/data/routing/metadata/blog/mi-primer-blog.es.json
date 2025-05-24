@@ -1,0 +1,24 @@
+{
+  "collection": "article",
+  "slug": "/blog/mi-primer-blog",
+  "locale": "es",
+  "title": "Mi primer blog",
+  "description": "dffddf ffdfd",
+  "keywords": [],
+  "preventIndexing": false,
+  "publishedAt": "2025-05-13T00:41:28.272Z",
+  "updatedAt": "2025-05-13T00:42:44.271Z",
+  "localizations": {
+    "de": "/blog/mein-erster-blog",
+    "en": "/blog/a-new-blog"
+  },
+  "seo": {
+    "metaTitle": "dffddf fdfdf",
+    "metaDescription": "dffd dffddf",
+    "sharedImage": {
+      "url": "/uploads/laravel_react_ad7bca948b.jpg",
+      "alt": "ddffd fdfdf"
+    }
+  },
+  "author": null
+}

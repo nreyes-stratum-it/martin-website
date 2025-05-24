@@ -1,0 +1,23 @@
+{
+  "collection": "page",
+  "slug": "/",
+  "locale": "es",
+  "title": "MARTIN WEB ESPAÑOL STRAPI",
+  "description": "MARTIN WEB ESPAÑOL",
+  "keywords": [],
+  "preventIndexing": false,
+  "publishedAt": "2025-05-23T16:29:24.431Z",
+  "updatedAt": "2025-05-23T16:29:24.359Z",
+  "localizations": {
+    "en": "/"
+  },
+  "seo": {
+    "metaTitle": "MARTIN WEB ESPAÑOL STRAPI",
+    "metaDescription": "MARTIN WEB ESPAÑOL",
+    "sharedImage": {
+      "url": "/uploads/laravel_react_ad7bca948b.jpg",
+      "alt": "MARTIN WEB ESPAÑOL"
+    }
+  },
+  "author": null
+}

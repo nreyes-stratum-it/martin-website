@@ -9,16 +9,19 @@ const MarkdownComponent = dynamic(() => import("@/components/internal/markdown/m
 });
 
 type ParagraphProps = {
-    data: ParagraphData;
+    data?: ParagraphData;
     classNames?: string;
 };
 
 const Paragraph = ({data, classNames}: ParagraphProps) => {
-    const {text, tag} = data || {};
 
-    if (!text) {
+    if (!data?.text) {
         return null;
     }
+
+    const {text, tag} = data
+
+
     return (
         <MarkdownComponent
             classNames={classNames}

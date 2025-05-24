@@ -23,7 +23,8 @@ const SectionWithFeaturesV2 = ({data}: SectionWithFeaturesV2Props) => {
                 </header>
                 <ul className="features">
                     {features?.map((feature) => (
-                        <li key={feature.id} className="text-center lg:!px-10 lg:!py-10  lg:!flex lg:!justify-start lg:!items-start">
+                        <li key={feature.id}
+                            className="text-center lg:!px-10 lg:!py-10  lg:!flex lg:!justify-start lg:!items-start">
                             {feature.media?.image && (
                                 <div className="!mb-4 flex justify-center lg:!mr-4 ">
                                     <Image

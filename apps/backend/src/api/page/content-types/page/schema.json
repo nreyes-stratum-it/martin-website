@@ -81,7 +81,10 @@
         "page.section-above-the-fold",
         "page.section-with-features",
         "page.section-spotlights",
-        "page.section-call-to-action"
+        "page.section-call-to-action",
+        "page.section-contact-form",
+        "page.section-stepper",
+        "page.section-business-card"
       ],
       "required": true,
       "pluginOptions": {

@@ -2,10 +2,11 @@ import {RoutingService} from "@/lib/services/routing-service";
 import {httpClient} from "@/lib/config/instances";
 import {StrapiRoutingProvider} from "@/lib/providers/routing/strapi-routing-provider";
 import {RoutingProvider} from "@/lib/interfaces/providers/routing";
+import {JsonRoutingProvider} from "@/lib/providers/routing/json-routing-provider";
 
 const providerMap: Record<string, () => RoutingProvider> = {
     strapi: () => new StrapiRoutingProvider(httpClient),
-    /*json: () => new StrapiRoutingProvider(httpClient), // TODO: Implement JSON provider*/
+    json: () => new JsonRoutingProvider(),
 
 };
 

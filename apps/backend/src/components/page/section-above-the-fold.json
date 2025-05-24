@@ -25,7 +25,8 @@
     "variant": {
       "type": "enumeration",
       "enum": [
-        "VARIANT-1"
+        "VARIANT-1",
+        "VARIANT-2"
       ],
       "required": true,
       "default": "VARIANT-1"

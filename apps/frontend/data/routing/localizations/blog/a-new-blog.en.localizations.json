@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "/blog/a-new-blog",
+    "locale": "en",
+    "title": "My First Post",
+    "updatedAt": "2025-05-13T00:42:44.222Z"
+  },
+  {
+    "slug": "/blog/mein-erster-blog",
+    "locale": "de",
+    "title": "mein erster Blog",
+    "updatedAt": "2025-05-13T00:42:44.238Z"
+  },
+  {
+    "slug": "/blog/mi-primer-blog",
+    "locale": "es",
+    "title": "Mi primer blog",
+    "updatedAt": "2025-05-13T00:42:44.238Z"
+  }
+]

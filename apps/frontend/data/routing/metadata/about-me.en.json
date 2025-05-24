@@ -1,0 +1,21 @@
+{
+  "collection": "page",
+  "slug": "/about-me",
+  "locale": "en",
+  "title": "About Me",
+  "description": "About Me Descrition",
+  "keywords": [],
+  "preventIndexing": false,
+  "publishedAt": "2025-05-20T19:05:11.570Z",
+  "updatedAt": "2025-05-20T19:05:11.511Z",
+  "localizations": {},
+  "seo": {
+    "metaTitle": "About Me",
+    "metaDescription": "About Me Descrition",
+    "sharedImage": {
+      "url": "/uploads/banner_82a365cc09.jpg",
+      "alt": "About Me Descrition alt"
+    }
+  },
+  "author": null
+}

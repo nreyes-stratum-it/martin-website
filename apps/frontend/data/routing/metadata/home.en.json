@@ -1,0 +1,23 @@
+{
+  "collection": "page",
+  "slug": "/",
+  "locale": "en",
+  "title": "Home",
+  "description": "Home Description",
+  "keywords": [],
+  "preventIndexing": false,
+  "publishedAt": "2025-05-15T01:43:45.852Z",
+  "updatedAt": "2025-05-15T01:43:45.712Z",
+  "localizations": {
+    "es": "/"
+  },
+  "seo": {
+    "metaTitle": "Home",
+    "metaDescription": "Home Description",
+    "sharedImage": {
+      "url": "/uploads/laravel_react_ad7bca948b.jpg",
+      "alt": "Home alt"
+    }
+  },
+  "author": null
+}

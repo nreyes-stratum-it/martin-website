@@ -1,0 +1,82 @@
+[
+  {
+    "url": "/blog/a-new-blog",
+    "lastModified": "2025-05-13T00:42:44.271Z",
+    "changeFrequency": "weekly",
+    "priority": 0.7,
+    "alternates": {
+      "languages": {
+        "en": "/blog/a-new-blog",
+        "de": "/de/blog/mein-erster-blog",
+        "es": "/es/blog/mi-primer-blog"
+      }
+    }
+  },
+  {
+    "url": "/",
+    "lastModified": "2025-05-23T16:29:24.359Z",
+    "changeFrequency": "weekly",
+    "priority": 0.7,
+    "alternates": {
+      "languages": {
+        "en": "/",
+        "es": "/es/"
+      }
+    }
+  },
+  {
+    "url": "/contact",
+    "lastModified": "2025-05-19T22:56:46.403Z",
+    "changeFrequency": "weekly",
+    "priority": 0.7,
+    "alternates": {
+      "languages": {
+        "en": "/contact"
+      }
+    }
+  },
+  {
+    "url": "/bitcoin-mining-notes",
+    "lastModified": "2025-05-22T14:28:37.838Z",
+    "changeFrequency": "weekly",
+    "priority": 0.7,
+    "alternates": {
+      "languages": {
+        "en": "/bitcoin-mining-notes"
+      }
+    }
+  },
+  {
+    "url": "/about-me",
+    "lastModified": "2025-05-20T19:05:11.511Z",
+    "changeFrequency": "weekly",
+    "priority": 0.7,
+    "alternates": {
+      "languages": {
+        "en": "/about-me"
+      }
+    }
+  },
+  {
+    "url": "/managed-it-outsourcing",
+    "lastModified": "2025-05-22T14:29:09.965Z",
+    "changeFrequency": "weekly",
+    "priority": 0.7,
+    "alternates": {
+      "languages": {
+        "en": "/managed-it-outsourcing"
+      }
+    }
+  },
+  {
+    "url": "/bitcoin-hosting",
+    "lastModified": "2025-05-22T14:41:05.807Z",
+    "changeFrequency": "weekly",
+    "priority": 0.7,
+    "alternates": {
+      "languages": {
+        "en": "/bitcoin-hosting"
+      }
+    }
+  }
+]

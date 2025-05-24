@@ -3,6 +3,9 @@ export const PageSections = {
     SECTION_WITH_FEATURES: "page.section-with-features",
     SECTION_SPOTLIGHTS: "page.section-spotlights",
     SECTION_CALL_TO_ACTION: "page.section-call-to-action",
+    SECTION_CONTACT_FORM: "page.section-contact-form",
+    SECTION_STEPPER: "page.section-stepper",
+    SECTION_BUSINESS_CARD: "page.section-business-card",
 
 } as const;
 

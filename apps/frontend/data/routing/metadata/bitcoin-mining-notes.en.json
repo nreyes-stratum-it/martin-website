@@ -1,0 +1,21 @@
+{
+  "collection": "page",
+  "slug": "/bitcoin-mining-notes",
+  "locale": "en",
+  "title": "Bitcoin Mining Notes",
+  "description": "Bitcoin Mining Notes",
+  "keywords": [],
+  "preventIndexing": false,
+  "publishedAt": "2025-05-22T14:28:37.892Z",
+  "updatedAt": "2025-05-22T14:28:37.838Z",
+  "localizations": {},
+  "seo": {
+    "metaTitle": "Bitcoin Mining Notes",
+    "metaDescription": "Bitcoin Mining Notes",
+    "sharedImage": {
+      "url": "/uploads/istockphoto_532269566_612x612_6b9f17010d.jpg",
+      "alt": "bitcoin mining notes"
+    }
+  },
+  "author": null
+}

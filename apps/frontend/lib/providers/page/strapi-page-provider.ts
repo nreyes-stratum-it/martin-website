@@ -3,8 +3,6 @@ import {HttpClient} from "@/lib/config/http-client";
 import {PagesData} from "@/lib/types/pages/pages";
 import {PagesSchema} from "@/lib/schemas/page/page";
 import {StrapiResponse} from "@/lib/types/strapi/response";
-import {LocalizationData} from "@/lib/types/localizations/localization";
-import {parseLocalizations} from "@/lib/helpers/routing/parse-localizations";
 
 export class StrapiPageProvider implements PageProvider {
     constructor(private readonly httpClient: HttpClient) {
@@ -34,44 +32,5 @@ export class StrapiPageProvider implements PageProvider {
             return null;
         }
     }
-
-
-
-
-    async getPageLanguageVariants(slug: string, locale: string): Promise<LocalizationData[] | null> {
-        try {
-            const url = `/pages?slug=${encodeURIComponent(slug)}&locale=${encodeURIComponent(locale)}`;
-            const {data} = await this.httpClient.get<StrapiResponse<unknown>>(url);
-
-            const rawPageData = data?.data;
-            if (!rawPageData) {
-                console.error("No page found for slug:", slug);
-                return null;
-            }
-
-            const pageParsed = PagesSchema.safeParse(rawPageData);
-            if (!pageParsed.success) {
-                console.error("Failed to parse page schema:", pageParsed.error);
-                return null;
-            }
-            const {
-                title,
-                slug: pageSlug,
-                locale: pageLocale,
-                updatedAt,
-                localizations
-            } = pageParsed.data;
-
-            return [
-                {title, slug: pageSlug, locale: pageLocale, updatedAt},
-                ...parseLocalizations(localizations ?? [])
-            ];
-
-        } catch (error) {
-            console.error("Error fetching language variants:", error);
-            return null;
-        }
-    }
-
 
 }
