@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import ThemeToggler from "@/components/layout/global/header/variants/header-v1/partials/theme-toggler";
 import HeaderLink from "@/components/layout/global/header/variants/header-v1/partials/navigation/header-link";
 import {HeaderData} from "@/lib/types/global/header/header";
 import {DEFAULT_LOCALE} from "@/lib/const/locale/locale";

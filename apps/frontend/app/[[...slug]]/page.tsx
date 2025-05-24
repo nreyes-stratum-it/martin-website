@@ -30,7 +30,7 @@ export default async function DynamicPage({params}: DynamicPageProps) {
 
     return (
         <div id="wrapper" className="w-full py-20">
-            djdjsdjsdjdsj
+            {renderPageContent(contentResult, locale)}
         </div>
     );
 }
